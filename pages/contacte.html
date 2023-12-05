@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>CV - Timofte Ana</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+</head>
+
+<body>
+
+    <div class="header">
+        <nav>
+            <a class="nav-link" href="../index.html"> DESPRE</a>
+            <a class="nav-link" href="../index.html#experienta"> EXPERIENȚĂ</a>
+            <a class="nav-link" href="../index.html#educatie"> EDUCAȚIE</a>
+            <a class="nav-link" href=""> CONTACTE</a>
+        </nav>
+    </div>
+
+    <div class="main">
+
+        <div class="info">
+
+            <table class="tabel-contacte">
+                <tr>
+                    <td class="celula-formular">
+                        <h3 class="centered verde"> Contactează-mă</h3>
+                        <br/>
+                        <form id="formular" method="POST" action="https://sheetdb.io/api/v1/itz4u24jj79z2">
+                           <input type="text" name="data[nume]" class="text-input" placeholder="Nume Prenume">
+                           <input type="email" name="data[email]" class="text-input" placeholder="Email">
+                           <textarea class="intrebare" name="data[intrebare]" placeholder="Adresează-mi o întrebare"></textarea>
+                          <input id="transmite" type="submit" value="Transmite">
+                        </form>
+                    </td>
+                    <td class="celula-harta">
+                        <iframe class="harta" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2713.752889701717!2d28.625549175410423!3d47.143107119870336!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40cbd00f24d2299f%3A0x1343bcdd52ad0ae9!2sGimnaziul%20%22Mihai%20Viteazul%22!5e0!3m2!1sro!2s!4v1701189445096!5m2!1sro!2s"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </td>
+
+                </tr>
+            </table>
+            <div class="fb-comments" data-width="100%" data-order-by="reverse_time" data-numposts="5" data-href="http://tekwill.online/timofteana">
+
+            </div>
+        </div>
+    </div>
+    <footer>
+        Timofte Ana 2023
+    </footer>
+    <script>
+       (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+
+      var form = document.getElementById('formular');
+        form.addEventListener("submit", e => {
+            e.preventDefault();
+            fetch(form.action, {
+                method: "POST",
+                body: new FormData(document.getElementById("formular")),
+            }).then(() =>{
+                alert("Multumesc !");
+                form.reset();
+            });
+        });  
+    </script>
+</body>
+
+</html>
